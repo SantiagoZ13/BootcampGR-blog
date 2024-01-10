@@ -1,0 +1,17 @@
+@use "tools";
+
+body{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: var(--container-padding);
+    margin: 0 auto;
+    font-family: Inter;
+    background-color: var(--color-black-pearl-50);
+    @include tools.container-width();
+}
+main{
+    display: flex;
+    flex-direction: column;
+    @include tools.container-width()
+}
