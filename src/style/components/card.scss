@@ -11,30 +11,18 @@
     background-color: var(--color-white);
 }
 
-@include tools.desktop {
-
-    .card-extended,
-    .card:nth-child(4n) {
-        background: var(--color-aquarius-100);
-        flex-direction: row;
-        grid-column: 1/4;
-        padding: 48px;
-        gap: 48px;
-        &>img {
-            
-            width: 660px;
-            height: 100%;
-        }
-        &>section{
-            gap: 12px 0;
-        }
-    }
-}
-
 .card section {
     display: flex;
     flex-direction: column;
     gap: 8px 0;
+}
+
+.card p{
+    text-align:justify;
+    font-size: 14px;
+}
+.card h2{
+    font-size: 18px;
 }
 
 .card img {
@@ -80,5 +68,31 @@
 @include tools.desktop {
     .card-extended {
         background-color: tomato;
+    }
+}
+@include tools.desktop {
+
+    .card-extended,
+    .card:nth-child(4n) {
+        background: var(--color-aquarius-100);
+        flex-direction: row;
+        
+        
+        grid-column: 1/4;
+        padding: 48px;
+        gap: 48px;
+        &>img {
+            align-self: center;
+            max-width: 560px;
+            height: 100%;
+        }
+        &>section{
+            gap: 12px 0;
+            justify-content: space-around;
+            
+        }
+    }
+    .card:nth-child(8n){
+        flex-direction: row-reverse;
     }
 }
