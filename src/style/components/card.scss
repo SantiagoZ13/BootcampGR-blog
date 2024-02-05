@@ -61,7 +61,7 @@
     color: var(--color-black-pearl-900);
 }
 
-.reading-time {
+.help-text {
     color: var(--color-black-pearl-400);
 }
 
@@ -72,8 +72,7 @@
 }
 @include tools.desktop {
 
-    .card-extended,
-    .card:nth-child(4n) {
+    .card-extended{
         background: var(--color-aquarius-100);
         flex-direction: row;
         
@@ -92,7 +91,7 @@
             
         }
     }
-    .card:nth-child(8n){
+    .card-extended.is-reversed{
         flex-direction: row-reverse;
     }
 }
