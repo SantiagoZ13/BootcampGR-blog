@@ -11,6 +11,28 @@ function humanizeDate ($date, i){
     $date.textContent = capitalize(humanizedDate)
 }
 
-const $dates = document.querySelectorAll("time")
+function humanizeArticleDate(){
+    const $dates = document.querySelectorAll("time")
+    $dates.forEach(humanizeDate)
+}
 
-$dates.forEach(humanizeDate)
+function sortByDate($a, $b){
+    const dateA = new Date($a.querySelector("time").getAttribute("datetime"))
+    const dateB = new Date($b.querySelector("time").getAttribute("datetime"))
+    return dateB - dateA
+}
+
+function sortArticleByDate(){
+    const $cards = document.querySelectorAll(".post-list .card")
+    const $cardSorted = [...$cards].sort(sortByDate)
+    const $postList = document.querySelector(".post-list");
+    [...$postList.children].forEach($child => $child.remove())
+    $postList.append(...$cardSorted)
+}
+
+function main(){
+    humanizeArticleDate()
+    sortArticleByDate()
+}
+
+main()

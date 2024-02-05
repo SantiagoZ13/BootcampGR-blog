@@ -65,14 +65,11 @@
     color: var(--color-black-pearl-400);
 }
 
-@include tools.desktop {
-    .card-extended {
-        background-color: tomato;
-    }
-}
+
 @include tools.desktop {
 
-    .card-extended{
+    
+    .card:nth-child(4n) {
         background: var(--color-aquarius-100);
         flex-direction: row;
         
@@ -91,7 +88,7 @@
             
         }
     }
-    .card-extended.is-reversed{
+    .card:nth-child(8n){
         flex-direction: row-reverse;
     }
 }
